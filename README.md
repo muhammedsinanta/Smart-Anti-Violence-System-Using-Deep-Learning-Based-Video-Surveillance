@@ -147,3 +147,18 @@ violence_detector.h5
 
 The trained model is used by the prediction pipeline to generate violence detection results from video input.
 
+## 💻 Application
+
+The project includes a web-based application for interacting with the violence detection system.
+
+The main application file is:
+
+app.py
+
+Supporting components include:
+
+templates/
+static/
+predict.py
+utils/
+
