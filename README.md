@@ -57,6 +57,7 @@ The project follows a video surveillance pipeline consisting of data collection,
 
 The overall workflow is:
 
+```text
 Data Collection
        ↓
 Data Preprocessing
@@ -74,32 +75,39 @@ Video Input
 Violence Prediction
        ↓
 Application Output
----
+```
 
 ## 📊 Model Performance
 
 The model was evaluated using standard classification metrics.
 
+```text
 Metric	Score
 Accuracy	84%
 Precision	80%
 Recall	100%
 F1-Score
+```
 
 ## 🧪 Evaluation Metrics
 
 The project evaluates the violence detection model using:
 
+```text
 Accuracy
 Precision
 Recall
 F1-Score
 Classification Report
+```
 
 These metrics are used to evaluate the model's ability to identify violent and non-violent video samples.
 
+---
+
 ## 📁 Project Structure
 
+```text
 smart-anti-violence-detection/
 │
 ├── models/
@@ -129,7 +137,7 @@ smart-anti-violence-detection/
 ├── violence_detector.h5
 ├── requirements.txt
 ├── README.md
----
+```
 
 ## 🧠 Trained Model
 
