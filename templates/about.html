@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="">
+
+<head>
+<title>Violence Detection</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <section> 
+      <!-- ################################################################################################ -->
+      <div></div>
+      <div>
+        <h1 id="logo"><a href="{{ url_for('home') }}">Violence Detection</a></h1>
+      </div>
+      <div>
+        <form class="clear" method="post" action="#">
+          <fieldset>
+            <legend>Search:</legend>
+            <input type="search" value="" placeholder="Search Here&hellip;">
+            <button class="fa fa-search" type="submit" title="Search"><em>Search</em></button>
+          </fieldset>
+        </form>
+      </div>
+      <!-- ################################################################################################ -->
+    </section>
+    <nav id="mainav"> 
+      <!-- ################################################################################################ -->
+      <ul class="clear">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        
+        <li><a href="#">About</a></li>
+        <li><a href="{{url_for('login')}}">Login</a></li>
+        <li><a href="{{url_for('register')}}">Register</a></li>
+    
+      </ul>
+      <!-- ################################################################################################ -->
+    </nav>
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="bgded overlay" style="background-image:url('{{ url_for('static', filename='images/demo/backgrounds/01.jpeg') }}');">
+  
+  <section id="breadcrumb" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Register</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+    <h6 class="heading">Violence Detection</h6>
+    <!-- ################################################################################################ -->
+  </section>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <h1>Violence Detection using Deep Learning</h1>
+      
+      <p>The Violence Detection Using Deep Learning project is designed to analyze videos and classify them as violent or non-violent using artificial intelligence. With increasing concerns about public safety and digital content moderation, this system provides an automated solution to detect violent activities in video footage.</p>
+      <p>The model is built using CNN-LSTM architecture, which combines spatial feature extraction (CNN) with temporal sequence learning (LSTM) to accurately identify patterns of violence. The system processes uploaded videos by extracting frames, preprocessing them, and passing them through a trained deep learning model for prediction. </p>
+      <img class="imgl borderedbox inspace-5" src="{{ url_for('static', filename='images/demo/imgl.jpeg') }}" alt="" height="300px" width="400px">
+      <p> The backend is developed using Flask, enabling seamless interaction between the model and the web-based interface, while the frontend is built using HTML, CSS, and JavaScript for an intuitive user experience. Users can upload a video, receive real-time predictions, and preview the video post-analysis. </p>
+      <p>The project has significant applications in public surveillance, law enforcement, social media monitoring, and smart security systems, helping authorities respond quickly to violent incidents. OpenCV is utilized for frame extraction and processing, while TensorFlow and Keras power the deep learning model.</p>
+      <p>The system is designed for high accuracy, making it a reliable tool for video analysis. Future enhancements may include real-time detection, dataset expansion, and improved deep learning architectures such as transformer-based models for better accuracy. By integrating AI with security, this project highlights the potential of technology-driven safety measures in modern society.</p>
+      
+      <div id="comments">
+        
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+   
+    <div class="one_quarter">
+      
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy;- All Rights Reserved - <a href="#">Violence Detection</a></p>
+    <p class="fl_right"><a target="_blank" href="" title=""></a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

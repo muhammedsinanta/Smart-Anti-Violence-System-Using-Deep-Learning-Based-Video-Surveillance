@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="">
+
+<head>
+<title>Violence Detection</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+    /* General page styling */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Centered container */
+    
+
+    /* Heading styles */
+    h2 {
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .h3 {
+        color: #444;
+        margin-top: 20px;
+    }
+
+    /* Styling for result text */
+    .p {
+        font-size: 18px;
+        color: #222;
+        background: #e0e0e0;
+        padding: 10px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    /* Full-width container for the page */
+#container1 {
+    background: white;
+    width: 80%;  /* Increase width */
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Video styling for full-width display */
+video {
+    width: 100%;  /* Makes video take full width of div */
+    max-width: 90%;  /* Adjusts max width to keep it within container */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+    /* Upload another video link */
+    .a {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        background-color: #007bff;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .chart-container { width: 50%; margin: auto; }
+
+    .a:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <section> 
+      <!-- ################################################################################################ -->
+      <div> </div>
+      <div>
+        <h1 id="logo"><a href="#">Violence Detection</a></h1>
+      </div>
+      <div>
+        <form class="clear" method="post" action="#">
+          <fieldset>
+            <legend>Search:</legend>
+            <input type="search" value="" placeholder="Search Here&hellip;">
+            <button class="fa fa-search" type="submit" title="Search"><em>Search</em></button>
+          </fieldset>
+        </form>
+      </div>
+      <!-- ################################################################################################ -->
+    </section>
+    <nav id="mainav"> 
+      <!-- ################################################################################################ -->
+      <ul class="clear">
+        <li class="active"><a href="#">Home</a></li>
+       
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{url_for('login')}}">Login</a></li>
+        <li><a href="{{url_for('register')}}">Register</a></li>
+      
+      </ul>
+      <!-- ################################################################################################ -->
+    </nav>
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <section class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <div id="container1">
+    <h2>Prediction Result</h2>
+    <p class="p"><strong>Result:</strong> {{ result }}</p>
+
+    <h3 class="h3">Video Preview:</h3>
+    <video width="640" height="360" controls>
+        <source src="{{ url_for('uploaded_file', filename=filename) }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h3>Data Visualization</h3>
+    <div class="chart-container">
+        <canvas id="barChart"></canvas>
+    </div>
+    <br>
+    <div class="chart-container">
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <br><br>
+    <a href="/" class="a">Upload Another Video</a>
+</div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy;  - All Rights Reserved - <a href="#">Violence Detection</a></p>
+    <p class="fl_right"><a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates"></a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script>
+  // Example data, modify this based on actual results
+  var labels = ["Violence", "Non-Violence"];
+  var dataValues = {{ probabilities | tojson }};  // Get probability data from backend
+
+  var barCtx = document.getElementById('barChart').getContext('2d');
+  new Chart(barCtx, {
+      type: 'bar',
+      data: {
+          labels: labels,
+          datasets: [{
+              label: 'Prediction Probability',
+              data: dataValues,
+              backgroundColor: ['red', 'green'],
+              borderColor: ['darkred', 'darkgreen'],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          responsive: true,
+          scales: {
+              y: { beginAtZero: true, max: 1 }
+          }
+      }
+  });
+
+  var pieCtx = document.getElementById('pieChart').getContext('2d');
+  new Chart(pieCtx, {
+      type: 'pie',
+      data: {
+          labels: labels,
+          datasets: [{
+              data: dataValues,
+              backgroundColor: ['red', 'green']
+          }]
+      }
+  });
+</script>
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>
+

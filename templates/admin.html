@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Login History</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">User Login History</h2>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Login Time</th>
+        </tr>
+        {% for login in logins %}
+        <tr>
+            <td>{{ login[0] }}</td>
+            <td>{{ login[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
