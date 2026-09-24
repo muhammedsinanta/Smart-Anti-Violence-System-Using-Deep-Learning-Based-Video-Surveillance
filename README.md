@@ -74,6 +74,7 @@ Video Input
 Violence Prediction
        ↓
 Application Output
+---
 
 ## 📊 Model Performance
 
@@ -128,10 +129,9 @@ smart-anti-violence-detection/
 ├── violence_detector.h5
 ├── requirements.txt
 ├── README.md
+---
 
-```
-
-##🧠 Trained Model
+## 🧠 Trained Model
 
 The repository includes the trained deep learning model:
 
