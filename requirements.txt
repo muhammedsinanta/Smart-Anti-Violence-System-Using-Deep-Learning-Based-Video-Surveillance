@@ -7,3 +7,4 @@ scikit-learn
 matplotlib
 moviepy
 flask
+argon2-cffi
