@@ -148,6 +148,96 @@ This screenshots shows the example of the application classifying a video as non
 ![Non-Violence Detection Result](screenshots/non-violence-detected-1.png)
 ![Non-Violence Detection Result](screenshots/non-violence-detected-2.png)
 
+---
 
+## 💻 Installation and Setup
 
+Follow these steps to run the project locally.
 
+### 1. Clone the Repository
+
+```bash
+git clone (https://github.com/muhammedsinanta/Smart-Anti-Violence-System-Using-Deep-Learning-Based-Video-Surveillance)
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd Smart-Anti-Violence-System-Using-Deep-Learning
+```
+
+### 3. Create a Python Virtual Environment
+
+```bash
+python -m venv violence
+```
+
+### 4. Activate the Environment
+
+**Windows:**
+
+```bash
+violence\Scripts\activate
+```
+
+**Linux/macOS:**
+
+```bash
+source violence/bin/activate
+```
+
+### 5. Install Dependencies
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+### 6. Verify the Model File
+
+Ensure that the trained model is available at the path expected by the application.
+
+```text
+violence_detector.h5
+```
+
+If the model is stored inside the `models/` directory, update the model path in the relevant Python file if necessary.
+
+**Note:** The application requires the trained model and any other required project assets to be present in their expected locations.
+
+## 🚀 Running the Application
+
+After installing the dependencies, run:
+
+```bash
+python app.py
+```
+
+If the application starts successfully, open the following address in your browser:
+
+```text
+http://127.0.0.1:5000
+```
+
+The application runs locally on your computer. This command does not deploy the application publicly to the internet.
+
+To stop the application, press `Ctrl + C` in the terminal.
+
+## 📦 Dependencies
+
+The project uses the following Python packages:
+
+```text
+tensorflow
+keras
+opencv-python
+numpy
+pandas
+scikit-learn
+matplotlib
+moviepy
+flask
+argon2-cffi
+```
+
+These dependencies should be listed in `requirements.txt`. Additional dependencies may be required depending on the imports used by the project's scripts.
