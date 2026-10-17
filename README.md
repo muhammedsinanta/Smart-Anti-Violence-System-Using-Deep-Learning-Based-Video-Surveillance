@@ -157,13 +157,13 @@ Follow these steps to run the project locally.
 ### 1. Clone the Repository
 
 ```bash
-git clone (https://github.com/muhammedsinanta/Smart-Anti-Violence-System-Using-Deep-Learning-Based-Video-Surveillance)
+git clone https://github.com/muhammedsinanta/Smart-Anti-Violence-System-Using-Deep-Learning-Based-Video-Surveillance.git
 ```
 
 ### 2. Navigate to the Project Directory
 
 ```bash
-cd Smart-Anti-Violence-System-Using-Deep-Learning
+cd Smart-Anti-Violence-System-Using-Deep-Learning-Based-Video-Surveillance
 ```
 
 ### 3. Create a Python Virtual Environment
@@ -177,7 +177,7 @@ python -m venv violence
 **Windows:**
 
 ```bash
-violence\Scripts\activate
+.\violence\Scripts\activate
 ```
 
 **Linux/macOS:**
