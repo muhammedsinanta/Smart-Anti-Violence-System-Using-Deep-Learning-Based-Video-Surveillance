@@ -188,8 +188,15 @@ source violence/bin/activate
 
 ### 5. Install Dependencies
 
+Upgrade pip:
+
 ```bash
 python -m pip install --upgrade pip
+```
+
+Install the required Python packages:
+
+```bash
 python -m pip install -r requirements.txt
 ```
 
@@ -223,21 +230,28 @@ The application runs locally on your computer. This command does not deploy the 
 
 To stop the application, press `Ctrl + C` in the terminal.
 
-## 📦 Dependencies
+---
 
-The project uses the following Python packages:
+## 🚀 How to Use the Application
 
-```text
-tensorflow
-keras
-opencv-python
-numpy
-pandas
-scikit-learn
-matplotlib
-moviepy
-flask
-argon2-cffi
-```
+After starting the application, follow these steps to detect violent activities in a video.
 
-These dependencies should be listed in `requirements.txt`. Additional dependencies may be required depending on the imports used by the project's scripts.
+### Step 1: Register an Account
+
+Create a new user account using the registration page if you do not already have an account.
+
+### Step 2: Log In
+
+Log in using your registered credentials to access the application.
+
+### Step 3: Upload a Video
+
+Select and upload the video you want to analyze for violent activities.
+
+### Step 4: Run Violence Detection
+
+Start the violence detection process. The application analyzes the uploaded video using the trained deep learning model to identify violent and non-violent activities.
+
+### Step 5: View Prediction Results
+
+Review the results displayed by the application to determine whether violence was detected in the video.
