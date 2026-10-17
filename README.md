@@ -121,5 +121,33 @@ smart-anti-violence-detection/
 
 ---
 
+## 🖥️ Application and User Interface
+
+The project includes a Flask-based web application that integrates the trained deep learning model for video-based violence detection.
+
+Users can interact with the application to submit video input and view the model's classification result.
+
+### Application Interface
+
+The following screenshot shows the application's user interface.
+
+![Smart Anti-Violence System Application Interface](screenshots/application-interface.png)
+
+### Violence Detection Result
+
+This screenshots shows the example of the application classifying a video as containing violent activity.
+
+![Violence Detection Result](screenshots/violence-detected-1.png)
+![Violence Detection Result](screenshots/violence-detected-2.png)
+
+
+### Non-Violence Detection Result
+
+This screenshots shows the example of the application classifying a video as non-violent.
+
+![Non-Violence Detection Result](screenshots/non-violence-detected-1.png)
+![Non-Violence Detection Result](screenshots/non-violence-detected-2.png)
+
+
 
 
