@@ -20,88 +20,76 @@ The project combines deep learning and computer vision techniques with a web-bas
 
 ## 🧠 Technologies Used
 
-- Python
-- Deep Learning
-- Computer Vision
-- TensorFlow / Keras
-- OpenCV
-- NumPy
-- YOLOv7
-- CNN
-- Flask
-- Jupyter Notebook
+- **Programming Language:** Python
+- **Deep Learning:** TensorFlow, Keras
+- **Computer Vision:** OpenCV
+- **Numerical Computing:** NumPy
+- **Data Analysis:** Pandas
+- **Machine Learning Utilities:** Scikit-learn
+- **Visualization:** Matplotlib
+- **Video Processing:** MoviePy
+- **Web Framework:** Flask
+- **Password Hashing:** Argon2
+- **Development Environment:** Jupyter Notebook, Anaconda
 
 ---
 
-## 🔄 System Workflow
+## 🧠 Deep Learning Model
+
+The project uses a trained deep learning model to classify video sequences as violent or non-violent.
+
+**Model file:** `violence_detector.h5`
+
+**Classification categories:**
+
+- `0` — Non-Violence
+- `1` — Violence
+
+The model processes video frames and produces a classification result based on the learned patterns in the training data.
+
+The model is integrated into the project's prediction and application workflows.
+
+---
+
+## ⚙️ Project Workflow
 
 ```text
 Video Input
-     ↓
-Video Preprocessing
-     ↓
-Frame Processing
-     ↓
-Deep Learning / Computer Vision Model
-     ↓
-Violence Detection
-     ↓
-Prediction Result
-     ↓
-Application Output
+     |
+     v
+Video Processing
+     |
+     v
+Frame Extraction
+     |
+     v
+Frame Preprocessing
+     |
+     v
+Trained Deep Learning Model
+     |
+     v
+Violence Classification
+     |
+     v
+Violence / Non-Violence Result
 ```
 
-## 🏗️ System Architecture
-
-The project follows a video surveillance pipeline consisting of data collection, preprocessing, feature/model processing, model development, training/testing and deployment.
-
-The overall workflow is:
-
-```text
-Data Collection
-       ↓
-Data Preprocessing
-       ↓
-Exploratory Data Analysis
-       ↓
-Model Implementation
-       ↓
-Deep Learning / Computer Vision
-       ↓
-Model Training & Testing
-       ↓
-Video Input
-       ↓
-Violence Prediction
-       ↓
-Application Output
-```
+---
 
 ## 📊 Model Performance
 
 The model was evaluated using standard classification metrics.
 
-```text
-Metric	Score
-Accuracy	84%
-Precision	80%
-Recall	100%
-F1-Score
-```
-
-## 🧪 Evaluation Metrics
-
-The project evaluates the violence detection model using:
-
-```text
-Accuracy
-Precision
-Recall
-F1-Score
-Classification Report
-```
+| Evaluation Metric | Score |
+|---|---:|
+| Accuracy | 84% |
+| Precision | 80% |
+| Recall | 100% |
+| F1-Score | 88.89% |
 
 These metrics are used to evaluate the model's ability to identify violent and non-violent video samples.
+**Note:** These results reflect the evaluated test dataset. Performance on real-world surveillance footage may differ depending on video quality, lighting, camera angle, and the characteristics of the input data.
 
 ---
 
@@ -110,42 +98,28 @@ These metrics are used to evaluate the model's ability to identify violent and n
 ```text
 smart-anti-violence-detection/
 │
-├── models/
-│   └── Model-related files
+├── models/                   # Model-related files
+├── scripts/                  # Supporting scripts
+├── static/                   # Static web application assets
+├── templates/                # Flask HTML templates
+├── utils/                    # Utility modules
+├── presentation/             # Project presentation
 │
-├── presentation/
-│   └── Project presentation
-│
-├── scripts/
-│   └── Supporting scripts
-│
-├── static/
-│   └── CSS, JavaScript and static assets
-│
-├── templates/
-│   └── HTML templates
-│
-├── utils/
-│   └── Utility modules
-│
-├── app.py
-├── create_database.py
-├── predict.py
-├── utils1.py
-├── __init__.py
-├── violence_project.ipynb
-├── violence_detector.h5
-├── requirements.txt
-├── README.md
+├── app.py                    # Main Flask application
+├── predict.py                # Prediction functionality
+├── create_database.py        # Database creation and setup
+├── utils1.py                 # Supporting utility functions
+├── __init__.py                # Python package initialization
+├── violence_project.ipynb     # Project notebook
+├── violence_detector.h5      # Trained deep learning model
+├── requirements.txt          # Python dependencies
+├── .gitignore                # Files excluded from Git
+└── README.md                 # Project documentation
 ```
 
-## 🧠 Trained Model
+*The directory listing describes the intended project organization. Some folders or files may be excluded from the public GitHub repository, particularly large datasets and generated files.*
 
-The repository includes the trained deep learning model:
-
-violence_detector.h5
-
-The trained model is used by the prediction pipeline to generate violence detection results from video input.
+---
 
 ## 💻 Application
 
